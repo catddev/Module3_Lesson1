@@ -4,6 +4,7 @@
 #include<math.h>
 #include<time.h>
 #include <Windows.h>
+#include <conio.h>
 
 void main()
 
@@ -215,10 +216,9 @@ start:
 	{
 		SetConsoleTextAttribute(hConsole, 13);
 
-		int Op;
+		int Op, T, TW, S;
 		scanf("%d", &Op);
 
-		int T, TW, S;
 		T = 0 + rand() % 60;
 		TW = 0 + rand() % 60;
 		printf("Время разговоров в будние дни у разных операторов: %d\n\n", T);
@@ -238,11 +238,78 @@ start:
 			printf("стоимость разговоров у третьего оператора за неделю: %d\n\n", S = 3.55 * T + 3.55 * TW*0.12);
 			SetConsoleTextAttribute(hConsole, 15);
 			break;
-		default:
-			break;
 		}
+	}
+	else if (tn == 13)
+	{
+		int card;
+		char var;
+		printf("введите номер темы открытки:\t");
+		scanf("%d", &card);
+		printf("введите литеру варианта внутри темы:\t");
+		scanf("%c", &var);
 
+		var = getche();
 
+		switch (card)
+		{
+		case 1:
+		{
+			switch (var)
+			{
+			case 'a':
+				printf("\n\nНовогодние, вариант а\n\n");
+				break;
+			case 'b':
+				printf("\n\nНовогодние, вариант b\n\n");
+				break;
+			case 'c':
+				printf("\n\nНовогодние, вариант c\n\n");
+				break;
+			default:
+				printf("\n\nvariant does not exist\n\n");
+			}
+		}
+			break;
+		case 2:
+		{
+			switch (var)
+			{
+			case 'a':
+				printf("\n\nС Днем Рождения, вариант а\n\n");
+				break;
+			case 'b':
+				printf("\n\nС Днем Рождения, вариант b\n\n");
+				break;
+			case 'c':
+				printf("\n\nС Днем Рождения, вариант c\n\n");
+				break;
+			default:
+				printf("\n\nvariant does not exist\n\n");
+			}
+		}
+			break;
+		case 3:
+		{
+			switch (var)
+			{
+			case 'a':
+				printf("\n\nС Днем Защитника Отечества, вариант а\n\n");
+				break;
+			case 'b':
+				printf("\n\nС Днем Защитника Отечества, вариант b\n\n");
+				break;
+			case 'c':
+				printf("\n\nС Днем Защитника Отечества, вариант c\n\n");
+				break;
+			default:
+				printf("\n\nvariant does not exist\n\n");
+			}
+		}
+			break;
+		default:
+			printf("\n\nsuch a card number does not exist\n\n");
+		}
 	}
 	goto start;
 }
