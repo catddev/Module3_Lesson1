@@ -211,34 +211,38 @@ start:
 			printf("no option\n\n");
 		}
 	}
-	//else if (tn == 12)
-	//{
-	//	SetConsoleTextAttribute(hConsole, 13);
+	else if (tn == 12)
+	{
+		SetConsoleTextAttribute(hConsole, 13);
 
-	//	//float O1 = 50, O2 = 2.45, O3 = 3.55;
-	//	//float W1 = O1*0.1, W2 = O2*0.08, W3 = O3*0.12;
-	//	float O;
-	//	int T1, T2, T3, TW1, TW2, TW3, W1, W2, W3;
-	//	T1 = 0 + rand() % 60;
-	//	T2 = 0 + rand() % 60;
-	//	T3 = 0 + rand() % 60;
-	//	TW1 = 0 + rand() % 60;
-	//	TW2 = 0 + rand() % 60;
-	//	TW3 = 0 + rand() % 60;
-	//	printf("Время разговоров в будние дни у разных операторов: %d %d %d\n\n", T1, T2, T3);
-	//	printf("Время разговоров в будние дни у разных операторов: %d %d %d\n\n", TW1, TW2, TW3);
-	//	switch (O)
-	//	{
-	//	case 1:
-	//	{
+		int Op;
+		scanf("%d", &Op);
 
-	//	}
-	//	default:
-	//		break;
-	//	}
+		int T, TW, S;
+		T = 0 + rand() % 60;
+		TW = 0 + rand() % 60;
+		printf("Время разговоров в будние дни у разных операторов: %d\n\n", T);
+		printf("Время разговоров в выходные дни у разных операторов: %d\n\n", TW);
+
+		switch (Op)
+		{
+		case 1:
+			printf("стоимость разговоров у первого оператора за неделю: %d\n\n", S = 50 * T + 50 * TW*0.1);
+			SetConsoleTextAttribute(hConsole, 15);
+			break;
+		case 2:
+			printf("стоимость разговоров у второго оператора за неделю: %d\n\n", S = 2.45 * T + 2.45 * TW*0.08);
+			SetConsoleTextAttribute(hConsole, 15);
+			break;
+		case 3:
+			printf("стоимость разговоров у третьего оператора за неделю: %d\n\n", S = 3.55 * T + 3.55 * TW*0.12);
+			SetConsoleTextAttribute(hConsole, 15);
+			break;
+		default:
+			break;
+		}
 
 
-	//}
+	}
 	goto start;
-
 }
